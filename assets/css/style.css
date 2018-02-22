@@ -1,0 +1,18 @@
+/*
+File:style.scss
+Author: Kailash Sudhakar
+DateCreated: 21.02.2018
+Last Modified: 21.02.2018
+Purpose: Sass source file with all the styles required for the todo app
+*/
+/*variables for the common style values*/
+/*responsive mixins*/
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400");
+/*main-styling starts*/
+html {
+  font-size: 14px; }
+
+body {
+  font-family: "font-family: " Roboto Condensed ", sans-serif;";
+  color: #000;
+  background: #F4F8F9; }

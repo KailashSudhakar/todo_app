@@ -1,0 +1,54 @@
+/*
+File:style.scss
+Author: Kailash Sudhakar
+DateCreated: 21.02.2018
+Last Modified: 21.02.2018
+Purpose: Sass source file with all the styles required for the todo app
+*/
+
+/*variables for the common style values*/
+
+$brand_blue: #16314D;
+$primary_orange: #F57F3E;
+$primary_black: #6F7C8B;
+$text_black: #000;
+
+
+
+/*responsive mixins*/
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: 992px) {
+    @content;
+  }
+}
+
+
+@mixin mobile {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin sm-mobile {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$sm-mobile-width}) {
+    @content;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400');
+
+
+/*main-styling starts*/
+
+html{
+  font-size: 14px;
+}   
+
+body{
+  font-family: 'font-family: 'Roboto Condensed', sans-serif;';
+  color: $text_black;
+  background:#F4F8F9;
+}
+
+
