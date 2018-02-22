@@ -14,12 +14,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="assets/css/style.css"> 
     <title>Todo App</title>
   </head>
   <body>
     <div class="container-fluid main_container">
       <div class="container content_wrapper">
-	<div class="row title_container">
+	<div class="row title_container text-center">
 	  <h1 class="title">
 	    todos
 	  </h1>
@@ -29,31 +30,34 @@
 	</div> <!--title_container-->
 	<div class="todo_box">
 	  <div class="new_item_input">
-	    <input id="new_item" placeholder="What needs to be done?">
+	    <input id="new_item" class="form-control form-control-lg" placeholder="What needs to be done?" autofocus>
 	  </div> <!--new_item_input-->
 	  <div class="items_list">
 	    <ul class="todo_list">
 	      <li class="todo_item">
-		Set up the Project
+		<input class="todo_checkbox" type="checkbox">
+		<label class="todo_name"> Set up the Project </label> 
+		<button class="delete"> </button>
 	      </li> <!--todo_item-->
 	      <li class="todo_item">
-		Do the markup
+		<input class="todo_checkbox" type="checkbox">
+		<label class="todo_name"> Set up the database </label> 
+		<button class="delete"> </button>
 	      </li> <!--todo_item-->
 	    </ul> <!--todo_list-->
 	  </div> <!--items_list-->
 	  <div class="filters_bottom">
-	    <div class="all_filter">
-	      All
-	    </div> <!--all_filter-->
-	    <div class="active_filter">
-	      Active
-	    </div> <!--active_filter-->
-	    <div class="completed_filter">
-	      Completed
-	    </div> <!--completed_filter-->
-	    <div class="clear_filter text-right">
-	      Clear Completed
-	    </div> <!--clear_filter-->
+	    <div class="col-12">
+	      <div class="all_filter">
+		All
+	      </div> <!--all_filter-->
+	      <div class="active_filter">
+		Active
+	      </div> <!--active_filter-->
+	      <div class="completed_filter">
+		Completed
+	      </div> <!--completed_filter-->
+	    </div> 
 	  </div> <!--filters_bottom-->
 	</div> <!--todo_box-->
       </div> <!--content_wrapper-->
