@@ -5,8 +5,7 @@ var knex = require('knex')({
     port: 3306,
     user     : 'blue',
     password: 'blue',
-    database : 'todo_app',
-    socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
+    database : 'todo_app'
   }
 });
 

@@ -1,0 +1,122 @@
+/*
+File:style.scss
+Author: Kailash Sudhakar
+DateCreated: 21.02.2018
+Last Modified: 21.02.2018
+Purpose: Sass source file with all the styles required for the todo app
+*/
+/*variables for the common style values*/
+/*responsive mixins*/
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400");
+/*main-styling starts*/
+html {
+  font-size: 14px; }
+
+body {
+  font-family: "font-family: " Roboto Condensed ", sans-serif;";
+  color: #000;
+  background: #F4F8F9;
+  font-weight: 300; }
+
+.main_container {
+  background: url("../img/todo_bg.jpg");
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  float: left; }
+  .main_container .content_wrapper {
+    width: 50%;
+    margin: 0px auto;
+    padding: 40px; }
+
+/*main_container*/
+.title_container {
+  color: #fff; }
+  .title_container .title {
+    font-size: 60px;
+    width: 100%;
+    font-weight: 300; }
+  .title_container .pending_items {
+    font-size: 14px;
+    width: 100%; }
+
+/*title_container*/
+.todo_box {
+  position: relative;
+  background: #fff;
+  border-radius: 3px;
+  padding: 15px;
+  min-height: 500px;
+  overflow: hidden;
+  width: 100%;
+  float: left; }
+  .todo_box .new_item_input {
+    padding-bottom: 5px; }
+    .todo_box .new_item_input #new_item {
+      font-style: italic;
+      font-weight: lighter;
+      color: #555;
+      font-size: 22px; }
+    .todo_box .new_item_input #new_item:focus {
+      font-style: none;
+      color: #888; }
+
+/*todo_box*/
+.items_list {
+  /*todo_list*/ }
+  .items_list .todo_list {
+    list-style: none;
+    line-height: 2;
+    padding-left: 0px;
+    /*todo_item*/ }
+    .items_list .todo_list .todo_item {
+      border-bottom: 1px solid #dddddd;
+      font-size: 22px;
+      color: #888; }
+      .items_list .todo_list .todo_item .todo_name {
+        padding-left: 10px; }
+      .items_list .todo_list .todo_item .true {
+        text-decoration: line-through; }
+      .items_list .todo_list .todo_item .false {
+        text-decoration: none; }
+      .items_list .todo_list .todo_item .todo_checkbox {
+        position: relative;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        height: 30px;
+        width: 30px;
+        border-radius: 30px;
+        border: 1px solid #ddd;
+        vertical-align: middle; }
+      .items_list .todo_list .todo_item .todo_checkbox:checked {
+        border: none; }
+      .items_list .todo_list .todo_item .todo_checkbox:checked:after {
+        content: url("../img/tick.svg");
+        position: absolute;
+        top: 0px; }
+      .items_list .todo_list .todo_item .delete {
+        border: 0;
+        margin: 0;
+        outline: none;
+        padding: 0px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: none;
+        float: right;
+        color: #ffa35a; }
+      .items_list .todo_list .todo_item .delete:after {
+        content: 'X'; }
+
+/*items_list*/
+.filters_bottom {
+  position: absolute;
+  bottom: 0px;
+  padding-bottom: 20px;
+  color: #888; }
+  .filters_bottom div {
+    display: inline-block;
+    padding-right: 15px; }
+
+/*filters_bottom*/
