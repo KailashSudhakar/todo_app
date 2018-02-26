@@ -13,7 +13,7 @@ http://185.183.182.134:9090
 Though a simple todo app can be built with storing the items in the browser localStorage, I wanted to leverage on my comfort with writing basic nodeJS APIs (with very good ORM) as well.
 
 #### Design:
-At the end of the what matters most to the user is the design/UX. I want it to look cool, hence I always follow the design first approach.
+At the end of the day, what matters most to the user is the design/UX. I want it to look cool, hence I always follow the design first approach.
 [Download Design File](https://drive.google.com/file/d/1alSqB99Ri-tn0HQ3yci4-e5cKlFhy7YZ/view?usp=sharing)
 * Sketch 44.1
 
