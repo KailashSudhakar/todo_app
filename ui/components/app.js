@@ -1,3 +1,13 @@
+
+/*
+File:app.js
+Author: Kailash Sudhakar
+DateCreated: 25.02.2018
+Last Modified: 26.02.2018
+Purpose: Render all the react components
+*/
+
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
@@ -107,7 +117,6 @@ class ToDo extends React.Component{
     .then((response) => {
       this.setState({toDos: response.data})
       this.getCount();
-      console.log(response);
     })
     .catch(function (error) {
       console.log(error);
@@ -118,7 +127,6 @@ class ToDo extends React.Component{
     let todoData = {};
     todoData.todo_name = todo;
     let toDos = this.state.toDos;
-    console.log(todoData);
     axios.post(`${this.baseUrl}/api/v1/todo/create/`,todoData)
     .then((response) => {
       this.setState({
@@ -172,7 +180,6 @@ getCount(){
     toDos[index].is_active = status;
     axios.patch(`${this.baseUrl}/api/v1/todo/${id}`, {is_active: ''+status})
     .then(res => {
-      console.log(res);
     })
     this.setState({
       toDos: toDos

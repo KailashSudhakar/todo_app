@@ -39,12 +39,12 @@ function normalizePort(val) {
     // named pipe
     return val;
   }
-  
+
   if (port >= 0) {
     // port number
     return port;
   }
-  
+
   return false;
 }
 
@@ -60,7 +60,7 @@ function onError(error) {
   var bind = typeof port === 'string'
     ? 'Pipe ' + port
     : 'Port ' + port;
-  
+
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
@@ -83,6 +83,7 @@ function onError(error) {
 
 function onListening() {
   var addr = server.address();
+  console.log("server listening on port "+addr.port)
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;

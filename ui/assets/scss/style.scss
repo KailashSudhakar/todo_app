@@ -2,23 +2,23 @@
 File:style.scss
 Author: Kailash Sudhakar
 DateCreated: 21.02.2018
-Last Modified: 21.02.2018
+Last Modified: 26.02.2018
 Purpose: Sass source file with all the styles required for the todo app
 */
 
-/*variables for the common style values*/
 
+/*variables for the common style values*/
 $brand_blue: #16314D;
 $primary_orange: #F57F3E;
 $primary_black: #6F7C8B;
 $text_black: #000;
 $text_grey: #888;
 $text_white: #fff;
-
+$mobile-width: 320px;
+$tablet-width: 768px;
 
 
 /*responsive mixins*/
-
 @mixin tablet {
   @media (min-width: #{$tablet-width}) and (max-width: 992px) {
     @content;
@@ -32,165 +32,153 @@ $text_white: #fff;
   }
 }
 
-@mixin sm-mobile {
-  @media (min-width: #{$mobile-width}) and (max-width: #{$sm-mobile-width}) {
-    @content;
-  }
-}
 
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400');
+@import url('https: //fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400');
+
 
 
 /*main-styling starts*/
-
-html{
+html {
   font-size: 14px;
 }
-
-body{
-  font-family: 'font-family: 'Roboto Condensed', sans-serif;';
+body {
+  background: #F4F8F9;
   color: $text_black;
-  background:#F4F8F9;
-  font-weight:300;
+  font-family: 'font-family: 'Roboto Condensed', sans-serif';
+  font-weight: 300;
 }
-
-.main_container
-{
- background: url('../img/todo_bg.jpg');
- height:100vh;
- overflow:hidden;
- width:100%;
- float:left;
- .content_wrapper
- {
-   width:50%;
-   margin:0px auto;
-   padding:40px;
- }
-} /*main_container*/
-
-.title_container
-{
-  color:$text_white;
-  .title
-  {
-    font-size:60px;
-    width:100%;
+.main_container {
+  background: url('../img/todo_bg.jpg');
+  float: left;
+  height: auto;
+  min-height: 100vh;
+  padding-bottom: 40px;
+  width: 100%;
+  .content_wrapper {
+    margin: 0px auto;
+    padding: 40px;
+    width: 50%;
+    @include mobile {
+      padding: 0px;
+      width: 100%;
+    }
+  }
+  @include tablet {
+    width: 70%;
+  }
+}
+/*main_container*/
+.title_container {
+  color: $text_white;
+  .title {
+    font-size: 60px;
     font-weight: 300;
+    width: 100%;
   }
-  .pending_items
-  {
-    font-size:14px;
-    width:100%;
+  .pending_items {
+    font-size: 14px;
+    width: 100%;
   }
-}/*title_container*/
-
-.todo_box
-{
-  position:relative;
-  background:$text_white;
-  border-radius:3px;
-  padding:15px;
-  min-height:500px;
-  overflow:hidden;
-  width:100%;
-  float:left;
-  .new_item_input
-  {
+}
+/*title_container*/
+.todo_box {
+  background: $text_white;
+  border-radius: 3px;
+  float: left;
+  height: auto;
+  min-height: 500px;
+  padding: 15px;
+  position: relative;
+  width: 100%;
+  .new_item_input {
     padding-bottom: 5px;
-    #new_item
-    {
-      font-style: italic;
-      font-weight: lighter;
+    #new_item {
       color: #555;
       font-size: 22px;
-    }
-    #new_item:focus
-    {
-      font-style:none;
-      color: $text_grey;
+      font-style: italic;
+      font-weight: lighter;
+      @include mobile {
+        font-size: 17px;
+      }
     }
   }
-}/*todo_box*/
-
-
-.items_list
-{
-  .todo_list
-  {
-    list-style: none;
-    line-height: 2;
-    padding-left: 0px;
-    .todo_item
-    {
-      border-bottom: 1px solid #dddddd;
-      font-size: 22px;
-      color: $text_grey;
-      .todo_name
-      {
-	padding-left: 10px;
-      }
-      .true
-      {
-        text-decoration: line-through;
-      }
-      .false
-      {
-        text-decoration: none;
-      }
-      .todo_checkbox
-      {
-	position:relative;
-	-webkit-appearance: none;
-	-moz-appearance:none;
-	appearance:none;
-	height: 30px;
-	width: 30px;
-	border-radius: 30px;
-	border: 1px solid #ddd;
-	vertical-align: middle;
-      }
-
-      .todo_checkbox:checked
-      {
-	border:none;
-      }
-      .todo_checkbox:checked:after
-      {
-	content: url('../img/tick.svg');
-	position: absolute;
-	top: 0px;
-       }
-       .delete
-       {
-	 border:0;
-	 margin:0;
-	 outline:none;
-	 padding:0px;
-	 -webkit-appearance: none;
-	 -moz-appearance:none;
-	 appearance:none;
-	 background: none;
-	 float: right;
-	 color: rgb(255, 163, 90);
-       }
-       .delete:after
-       {
-	 content:'X';
-       }
-
-    } /*todo_item*/
-  } /*todo_list*/
-} /*items_list*/
-.filters_bottom
-{
-  position:absolute;
-  bottom:0px;
-  padding-bottom:20px;
-  color:$text_grey;
-  div
-  {
-    display:inline-block;
-    padding-right:15px;
+  #new_item:focus {
+    color: $text_grey;
+    font-style: none;
   }
-} /*filters_bottom*/
+}
+  /*todo_box*/
+  .items_list {
+    padding-bottom: 15px;
+    .todo_list {
+      line-height: 2;
+      list-style: none;
+      padding-left: 0px;
+      .todo_item {
+        border-bottom: 1px solid #dddddd;
+        color: $text_grey;
+        font-size: 22px;
+        .todo_name {
+          padding-left: 10px;
+        }
+      }
+    }
+    .true {
+      text-decoration: line-through;
+    }
+    .false {
+      text-decoration: none;
+    }
+    .todo_checkbox {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      border: 1px solid #ddd;
+      border-radius: 30px;
+      cursor: pointer;
+      height: 30px;
+      position: relative;
+      vertical-align: middle;
+      width: 30px;
+    }
+    .todo_checkbox:checked {
+      border: none;
+    }
+    .todo_checkbox:checked:after {
+      content: url('../img/tick.svg');
+      position: absolute;
+      top: 0px;
+    }
+    .delete {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background: none;
+      border: 0;
+      color: rgb(255, 163, 90);
+      cursor: pointer;
+      float: right;
+      margin: 0;
+      outline: none;
+      padding: 0px;
+    }
+    .delete:after {
+      content: 'X';
+    }
+    @include mobile {
+      font-size: 17px;
+    }
+    /*todo_item*/
+    /*todo_list*/
+  }
+  /*items_list*/
+  .filters_bottom {
+    bottom: 10px;
+    color: $text_grey;
+    position: absolute;
+    div {
+      display: inline-block;
+      padding-right: 15px;
+    }
+  }
+  /*filters_bottom*/

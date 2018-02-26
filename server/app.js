@@ -1,3 +1,5 @@
+// This is not the starter js file, run node bin/www on the server root directory
+
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -11,10 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var users = require('./routes/users');
 var todo_list = require('./routes/todo_list');
 
-app.use('/api/v1/users', users);
 app.use('/api/v1/todo', todo_list);
 
 app.use(function(req, res, next) {
